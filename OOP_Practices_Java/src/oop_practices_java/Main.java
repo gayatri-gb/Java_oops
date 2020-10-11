@@ -16,7 +16,8 @@ public class Main {
 		System.out.println(encap.getid());
 		
 		encap.sum();// performed addition 
-
+Abstraction abs = new Abstraction();
+System.out.println(abs.area());
 	}
 
 }
