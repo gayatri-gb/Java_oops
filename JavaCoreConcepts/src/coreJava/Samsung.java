@@ -1,5 +1,5 @@
 package coreJava;
-
+//Interface Example
 public class Samsung implements Phone {
 
 	@Override

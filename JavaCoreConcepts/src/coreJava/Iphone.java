@@ -1,5 +1,5 @@
 package coreJava;
-
+//Interface Example
 public class Iphone implements Phone {
 
 	@Override
