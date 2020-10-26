@@ -44,6 +44,7 @@ class dataBound<K,V>{
 		this.value = value;
 	}
 	
+	//applying restrictions 
 	public <E extends Character>  void charGeneric(E element) {
 		System.out.println(element);
 	}
@@ -72,9 +73,44 @@ public class Generics {
 		data.printArray(array);
 		dataBound<Integer, String> db= new dataBound<Integer, String> (1, "Value");
 		db.charGeneric('m');
+		
+		DataComparable dc= new DataComparable(1);//part1
+		System.out.println(dc.compareTo(0));//part2
 
 	}
 
 	
+	
+}
+//comparing(Natural ordering requires the type. so  extend the T with comparable.
+class DataComparable <T extends Comparable> implements Comparable<T>{
+	
+	private T myVariable;
+	
+	
+
+	public DataComparable(T myVariable) {
+		super();
+		this.myVariable = myVariable;
+	}
+
+
+
+	public T getMyVariable() {
+		return myVariable;
+	}
+
+
+
+	public void setMyVariable(T myVariable) {
+		this.myVariable = myVariable;
+	}
+
+
+
+	@Override
+	public int compareTo(T o) {
+		return o.compareTo(getMyVariable());
+	}
 	
 }
