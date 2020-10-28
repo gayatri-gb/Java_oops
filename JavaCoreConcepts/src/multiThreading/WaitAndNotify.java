@@ -16,7 +16,7 @@ public class WaitAndNotify {
 			}// wait method is stop for sometime until notify method is executed,
 			
 			balance= balance- amount;
-			System.out.println("withdrawal succesfull");
+			System.out.println("withdrawal successful: " +balance);
 		}
 		}
 		
@@ -26,7 +26,7 @@ public class WaitAndNotify {
 		System.out.println("Depositing amount");
 		balance= balance+amount;
 		synchronized(this){
-		notifyAll();
+		notifyAll();// notify release lock on only one method(method which has longest wait will be released), notifyAll release lock on all methods
 	}
 	}
 
